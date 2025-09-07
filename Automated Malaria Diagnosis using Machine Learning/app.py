@@ -32,7 +32,7 @@ class LeNet(nn.Module):
 def load_model():
     try:
         model = torch.load(
-            'trained_model.sav',
+            './trained_model.sav',
             map_location=torch.device('cuda' if torch.cuda.is_available() else 'cpu'), 
             weights_only=False,  # Ensure only weights are loaded, not the entire model object
         )
@@ -80,4 +80,5 @@ if uploaded_file is not None:
                 st.write("The model has detected signs of a malaria parasite in the cell.")
             else:
                 st.success("Prediction: **Uninfected**")
+
                 st.write("The model has classified the cell as uninfected.")
