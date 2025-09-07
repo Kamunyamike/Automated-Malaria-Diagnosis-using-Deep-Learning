@@ -32,14 +32,14 @@ class LeNet(nn.Module):
 def load_model():
     try:
         model = torch.load(
-            '/trained_model.sav',
+            "trained_model.sav",
             map_location=torch.device('cuda' if torch.cuda.is_available() else 'cpu'), 
             weights_only=False,  # Ensure only weights are loaded, not the entire model object
         )
         model.eval()
         return model
     except FileNotFoundError:
-        st.error("Error: 'trained_model.sav' not found. Please ensure it's in the same directory.")
+        st.error("Error: trained_model  not found. Please ensure its in the same directory.")
         st.stop()
     except Exception as e:
         st.error(f"Error loading model: {e}")
@@ -82,4 +82,5 @@ if uploaded_file is not None:
                 st.success("Prediction: **Uninfected**")
 
                 st.write("The model has classified the cell as uninfected.")
+
 
