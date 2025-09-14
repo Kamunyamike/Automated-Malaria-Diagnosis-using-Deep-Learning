@@ -109,10 +109,10 @@ def main():
     with st.sidebar:
         st.header("📋 About this System")
         st.markdown("""
-        This system uses a trained LeNet Convolutional Neural Network to detect malaria parasites in blood cell images.
+        This system uses a trained LeNet Convolutional Neural Network to detect malaria parasites in blood slide images.
         
         **How it works:**
-        1. Upload a blood cell image
+        1. Upload a blood slide image
         2. The AI model analyzes the image
         3. Get prediction: Parasitized or Uninfected
         4. View confidence scores
@@ -138,11 +138,11 @@ def main():
     col1, col2 = st.columns([1, 1])
     
     with col1:
-        st.header("📤 Upload Blood Cell Image")
+        st.header("📤 Upload Blood Slide Image")
         uploaded_file = st.file_uploader(
             "Choose an image file",
             type=['png', 'jpg', 'jpeg'],
-            help="Upload a blood cell image for malaria detection"
+            help="Upload a blood slide image for malaria detection"
         )
         
         if uploaded_file is not None:
@@ -241,3 +241,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
